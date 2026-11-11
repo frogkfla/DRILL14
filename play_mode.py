@@ -1,3 +1,5 @@
+import random
+
 from pico2d import *
 import game_world
 import game_framework
@@ -28,14 +30,14 @@ def init():
     boy = Boy()
     game_world.add_oject(boy)
 
+    speeds = random.sample(range(100, 191), 10)
     for row in range(2):
         for column in range(5):
-            x = 160 + column * 320
-            y = 190 + row * 220
             bird_index = row * 5 + column
-            speed = 100 + bird_index * 10
+            x = 160 + column * 320 + random.uniform(-80, 80)
+            y = 190 + row * 220 + random.uniform(-20, 20)
             direction = 1 if bird_index % 2 == 0 else -1
-            bird = Bird(x, y, speed, direction)
+            bird = Bird(x, y, speeds[bird_index], direction)
             game_world.add_oject(bird)
 
     grass = Grass()
