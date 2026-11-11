@@ -32,7 +32,10 @@ def init():
         for column in range(5):
             x = 160 + column * 320
             y = 190 + row * 220
-            bird = Bird(x, y)
+            bird_index = row * 5 + column
+            speed = 100 + bird_index * 10
+            direction = 1 if bird_index % 2 == 0 else -1
+            bird = Bird(x, y, speed, direction)
             game_world.add_oject(bird)
 
     grass = Grass()
