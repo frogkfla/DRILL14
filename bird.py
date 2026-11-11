@@ -2,6 +2,7 @@ from pico2d import get_canvas_width, load_image
 
 
 ## 설명 커밋 위한 수정
+### 설명 커밋 위한 수정
 import game_framework
 
 
