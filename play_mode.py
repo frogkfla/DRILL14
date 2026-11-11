@@ -28,8 +28,12 @@ def init():
     boy = Boy()
     game_world.add_oject(boy)
 
-    bird = Bird(800, 300)
-    game_world.add_oject(bird)
+    for row in range(2):
+        for column in range(5):
+            x = 160 + column * 320
+            y = 190 + row * 220
+            bird = Bird(x, y)
+            game_world.add_oject(bird)
 
     grass = Grass()
     game_world.add_oject(grass, 0)
